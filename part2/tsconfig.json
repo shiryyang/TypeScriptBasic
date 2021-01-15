@@ -1,0 +1,57 @@
+{
+  /*
+    "include" 用来指定编译的文件
+    路径：** 表示任意目录
+          * 表示任意文件
+    "exclude" 不需要被编译的文件
+    默认值：['node_modules','bower_components','jspm_packages']
+  */
+  "include": [
+    "./src/**/*"
+  ],
+//  "exclude": [
+//    "./src/app/**/*"
+//  ]
+  /*
+    "compilerOptions" 编译器选项
+  */
+  "compilerOptions": {
+    // target 用来指定ts编译为js的版本
+    "target": "ES3",
+    // module 指定要使用的模块化的规范
+//    "module": "CommonJS",
+//    "lib": [],
+    // outDir 用来指定编译后文件所在的目录
+    "outDir": "./dist",
+//    "outFile": "",
+
+    //是否对js文件进行编译
+//    "allowJs": false,
+
+    // 检查是否检查js文件语法
+//    "checkJs": false,
+
+    // 是否编译注释
+    "removeComments": true,
+
+    // 是否生成编译后文件
+    "noEmit": false,
+
+    // 当有错误时不生成编译后的文件
+    "noEmitOnError": false,
+
+    // 所有严格模式的总开关
+    "strict": true,
+    // 编译后的文件是否开启严格模式，默认是true
+    "alwaysStrict": false,
+
+    // 不允许是否隐式的any类型
+    "noImplicitAny": false,
+
+    // 不允许不明确类型的this
+    "noImplicitThis": false,
+
+    // 严格的检查空值
+    "strictNullChecks": false
+  }
+}
