@@ -16,7 +16,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: "bundle.js",
         //
-        enviroument: {
+        environment: {
             arrowFunction: false
         }
     },
@@ -29,34 +29,33 @@ module.exports = {
                 // test指定的是规则生效的文件
                 test: /\.ts$/,
                 // 要使用的loader
-                loader: [
+                use: [
+                  // 配置babal
                     {
-                        // 配置babel
-                        loader: 'babel-loader',
+                        // 指定加载器
+                        loader: "babel-loader",
                         // 设置babel
                         options: {
                             // 设置预定义的环境
                             presets: [
-                                [
-                                    // 指定环境的插件
-                                    '@babel/preset-env',
-                                    //配置信息
-                                    {
-                                        //
-                                        target: {
-                                            "chrome": "88"
-                                        },
-                                        // 指定croejs的版本
-                                        "corejs": "3",
-                                        // 使用corejs的方式"usage",表示按需加载
-                                        "useBuiltIns": "usage"
-                                    }
-                                ]
+                              [
+                                // 指定环境插件
+                                "@babel/preset-env",
+                                //配置信息
+                                  {
+                                      targets: {
+                                          "chrome": "88"
+                                      },
+                                      // 指定croejs的版本
+                                      "corejs": "3",
+                                      // 使用corejs的方式"usage",表示按需加载
+                                      "useBuiltIns": "usage"
+                                  }
+                              ]
                             ]
                         }
                     },
-                    'ts-loader'
-                ],
+                    'ts-loader'],
                 // 要排除的文件
                 exclude: /node_modules/
             }
